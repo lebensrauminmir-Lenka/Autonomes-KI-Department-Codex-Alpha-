@@ -1,126 +1,131 @@
-# 🗂️ Vollständige Projekt- und Ordnerstruktur
-Dieses Dokument bietet eine lückenlose, detaillierte und vollständig ausformulierte Übersicht über die tatsächliche Dateistruktur deines Claude-Agenten-Departments (`subagents_department`). Es bildet exakt ab, welche Ordner und Dateien durch das Skript `recreate_project.py` erstellt werden.
+[PROJEKT_STRUKTUR.md](https://github.com/user-attachments/files/31387076/PROJEKT_STRUKTUR.md)
+# 🗂️ Vollständige Dokumentation: Struktur deines autonomen Claude KI-Departments
+
+Diese Dokumentation bildet die **vollständige, lückenlose Architektur** deines Systems ab. Sie zeigt dir exakt auf, wo sich die **Konfiguration (Config)**, die **Pipeline-Verzeichnisse** und alle anderen strategischen Komponenten befinden, die in deinen PDF-Originalhandbüchern spezifiziert sind.
 
 ---
 
-## 🌳 1. Der vollständige Verzeichnisbaum (ASCII-Visualisierung)
+## 🌲 Die visuelle Gesamtstruktur (ASCII-Baum)
 
-Hier ist die exakte und vollständige Struktur deines Projekts. Jede Datei und jeder Unterordner existiert genau an dieser Stelle:
+Wenn du das Skript `recreate_project_v3.py` ausführst, wird genau diese Struktur direkt auf deinem Mac-Schreibtisch angelegt:
 
 ```text
-subagents_department/
-├── 01_ПРОЕКТ-ОТДЕЛА/
+Building Autonomous AI Department/
+├── 00_СТАРТ-В-CLAUDE-DESKTOP.md        # Zentraler Start-Prompt für Claude Desktop
+├── 02_ПРОМПТЫ.md                       # Master-Prompt-Datenbank aller Agenten
+├── 03_ЭКСПЕРИМЕНТЫ.md                  # Test-Sandkasten für Prompt-Modifikationen
+├── 04_ЧЕКЛИСТ-СЪЁМКИ.md                # Video- und Foto-Produktionsvorgaben
+├── 05_КАРТОЧКА-СРАВНЕНИЯ.md            # Standardisierte Wettbewerbsanalyse-Matrix
+├── 06_ИСТОЧНИКИ.md                     # Die unbestechliche Whitelist für Fakten
+├── 07_ОТЧЁТ-ПРОВЕРКИ.md                # Prüfberichte und Veto-Logs des QA Critics
+├── README.md                           # System-Manifest und Installationsanleitung
+├── LICENSE                             # MIT-Lizenz für dein Repository
+├── recreate_project_v3.py              # Der vollständige Python-Installer
+│
+├── 01_ПРОЕКТ-ОТДЕЛА/                   # === OPERATIVER AGENTEN-BEREICH ===
 │   ├── .claude/
-│   │   └── settings.json
-│   ├── employees/
-│   │   ├── copywriter/
-│   │   │   └── instructions.md
-│   │   ├── critic/
-│   │   │   └── instructions.md
-│   │   ├── marketer/
-│   │   │   └── instructions.md
-│   │   └── researcher/
-│   │       └── instructions.md
-│   ├── final/
-│   │   └── test-run.md
-│   ├── output/
-│   │   ├── copywriter/
-│   │   │   └── texts.md
-│   │   ├── marketer/
-│   │   │   └── strategy.md
-│   │   └── researcher/
-│   │       ├── source-1.md
-│   │       ├── source-2.md
-│   │       └── source-3.md
-│   ├── AGENTS.md
-│   └── ЗАДАЧА.md
-├── 02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/
-│   ├── knowledge/
-│   │   ├── copywriter/
-│   │   │   └── forbidden_phrases_template.md
-│   │   └── global/
-│   │       └── brand_voice_template.md
-│   ├── pipeline/
-│   │   └── input/
-│   │       └── briefing_template.md
-│   └── readme.md
-└── 03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТ_РАУНДА/
-    └── readme.md
+│   │   └── settings.json               # ⚙️ DIE ZENTRALE SYSTEM-CONFIG (Konfiguration)
+│   ├── ЗАДАЧА.md                       # Das übergeordnete Zieldokument des Departments
+│   ├── AGENTS.md                       # Rollenspezifikation der 5 Micro-Identitäten
+│   ├── employees/                      # System-Prompts der einzelnen Mitarbeiter
+│   │   ├── manager/instructions.md     # Managing Director (Orchestrator)
+│   │   ├── researcher/instructions.md  # Fact-Finding Researcher (3 Instanzen)
+│   │   ├── marketer/instructions.md    # Strategic Marketer
+│   │   ├── copywriter/instructions.md  # Emotion-driven Copywriter
+│   │   └── critic/instructions.md      # Uncompromising QA Critic
+│   ├── output/                         # Dynamischer Zwischenarbeitsbereich der Agenten
+│   │   ├── researcher/                 # Berichte (source-1.md, source-2.md, source-3.md)
+│   │   ├── marketer/                   # Positionierungsstrategie (strategy.md)
+│   │   └── copywriter/                 # Entwürfe & Historie (texts.md)
+│   └── final/                          # Verifiziertes Endarchiv für freigegebene Kampagnen
+│       └── test-run.md                 # Erfolgreicher, freigegebener Testlauf
+│
+├── 02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/          # === STATISCHE WISSENSDATENBANK ===
+│   ├── readme.md                       # Erläuterung der statischen Verzeichnisse
+│   ├── knowledge/                      # Globale Leitplanken & Brand Voice
+│   │   ├── global/
+│   │   │   └── brand_voice_template.md # Schreibstil-Regeln (kurze Sätze, direktes "Du")
+│   │   └── copywriter/
+│   │       └── forbidden_phrases_template.md # 🚫 Blacklist verbotener KI-Klischees
+│   └── pipeline/                       # 🚀 DIE PIPELINE (Zentraler operativer Kern)
+│       ├── input/                      # Kampagnen-Input
+│       │   ├── briefing_template.md    # Blanko-Vorlage für neue Kampagnen
+│       │   └── briefing.md             # Aktives Briefing für deinen KI-Telefonassistenten
+│       └── interim/                    # Temporärer Speicher während der Datenverarbeitung
+│
+└── 03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТЬЕГО_РАУНДА/   # === REVISIONS- & OPTIMIERUNGS-PROTOKOLL ===
+    ├── readme.md                       # Übersicht der Optimierungsrunden
+    └── ИЗМЕНЕНИЕ-01.md                 # Verschärfte Critic-Richtlinien zur System-Kalibrierung
 ```
 
 ---
 
-## 📂 2. Detailerklärung aller Verzeichnisse (Ordner-Katalog)
+## ⚙️ 1. Die Konfiguration (Die Config)
 
-### Bereich 1: `01_ПРОЕКТ-ОТДЕЛА` (Der aktive Agenten-Bereich)
-In diesem Hauptordner agieren deine virtuellen Mitarbeiter. Hier liegen die System-Prompts, die Arbeitsverzeichnisse und die fertigen Text-Freigaben.
+Die zentrale Steuerungseinheit deines Systems befindet sich im versteckten Verzeichnis `.claude/` innerhalb der Projekt-Abteilung:
+📍 **Pfad:** `01_ПРОЕКТ-ОТДЕЛА/.claude/settings.json`
 
-*   **`subagents_department/01_ПРОЕКТ-ОТДЕЛА/`**: Das operative Zentrum.
-*   **`.../.claude/`**: Ein versteckter Systemordner für Claude-Schnittstellen.
-    *   `settings.json`: Die zentrale Konfigurationsdatei für das gesamte Department (Modelleinstellungen, aktivierte Features, Datenpfade).
-*   **`.../employees/`**: Das „Büro“ deiner Agenten. Enthält pro Rolle einen eigenen Unterordner.
-    *   `copywriter/`: Arbeitsplatz des Copywriters. Enthält dessen Systemanweisungen.
-    *   `critic/`: Arbeitsplatz des unbestechlichen Qualitätsprüfers (Critic).
-    *   `marketer/`: Arbeitsplatz des strategischen Marketing-Spezialisten.
-    *   `researcher/`: Arbeitsplatz des faktenbasierten Forschers.
-*   **`.../output/`**: Der Zwischenspeicher für noch nicht freigegebene Dokumente. Jeder Agent schreibt seine Ergebnisse in seinen zugeordneten Ordner.
-    *   `copywriter/`: Roh- und Entwurfsfassungen der Werbetexte.
-    *   `marketer/`: Die ausgearbeitete Marketingstrategie.
-    *   `researcher/`: Die verifizierten, faktenbasierten Forschungsberichte.
-*   **`.../final/`**: Das Zielverzeichnis. Nur Texte, die die unbestechliche Prüfung des QA Critics fehlerfrei durchlaufen haben, werden hier dauerhaft abgespeichert.
+Diese Datei legt die technischen und pfadbezogenen Spielregeln für Claude Code fest:
 
----
+```json
+{
+  "project_name": "subagents_department",
+  "version": "1.1.0",
+  "default_model": "claude-3-5-sonnet",
+  "features": {
+    "parallel_research_instances": 3,
+    "automatic_veto_handling": true,
+    "strict_censorship_enforcement": true
+  },
+  "paths": {
+    "prompts": "02_ПРОМПТЫ.md",
+    "critic_rules": "03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТЬЕГО_РАУНДА/ИЗМЕНЕНИЕ-01.md",
+    "output_directory": "01_ПРОЕКТ-ОТДЕЛА/output/",
+    "pipeline_input": "02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/pipeline/input/",
+    "pipeline_interim": "02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/pipeline/interim/"
+  }
+}
+```
 
-### Bereich 2: `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ` (Statisches Wissensarchiv)
-Hier liegen Referenzen und Dateien, die von den Agenten nicht verändert werden dürfen, sondern als feste Leitplanken dienen.
-
-*   **`.../knowledge/`**: Deine Wissensdatenbank.
-    *   `global/`: Übergreifende Format- und Stilvorlagen (z. B. der allgemeine Brand Voice).
-    *   `copywriter/`: Spezifische Textausschlüsse (Blacklists) für den Schreiber.
-*   **`.../pipeline/input/`**: Hier legst du deine neuen Kampagnen-Briefings ab. Dies ist der Startpunkt für jeden neuen Durchlauf deines Departments.
-
----
-
-### Bereich 3: `03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТ_РАУНДА` (Änderungs- und Update-Verzeichnis)
-*   **`.../readme.md`**: Ein historischer Index, der als Revisionsprotokoll dient, um Änderungen an den Agenten über mehrere Testrunden hinweg sauber zu dokumentieren.
+*   **`features`:** Aktiviert fortgeschrittene Funktionen wie das parallele Abrufen von drei Recherche-Instanzen zur Vermeidung von kognitiven Verzerrungen (Bias) sowie das automatisierte Veto-Handling.
+*   **`paths`:** Sagt Claude Code exakt, wo er seine globalen Anweisungen (`prompts`), die aktuellen Revisions-Regeln (`critic_rules`) und den operativen Input (`pipeline_input`) herholen muss.
 
 ---
 
-## 📄 3. Vollständiges Datei- und Inhaltsverzeichnis
+## 🚀 2. Die Pipeline (Zentraler Kampagnen-Ablauf)
 
-Jede Datei, die durch dein Installationsskript angelegt wird, ist bereits mit praxiserprobten Inhalten und Regeln vorstrukturiert.
+Die Pipeline ist das Herzstück deiner täglichen Arbeit. Sie ist streng vom Agenten-Code getrennt, damit statische Briefings nicht das wertvolle Kontextfenster der Agenten verstopfen.
+📍 **Pfad:** `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/pipeline/`
 
-| Exakter Dateipfad | Zweck & Funktion | Vorstrukturierter Inhalt |
-| :--- | :--- | :--- |
-| `01_ПРОЕКТ-ОТДЕЛА/.claude/settings.json` | Steuert globale Department-Features wie Veto-Schleifen. | Definiert das Modell `claude-3-5-sonnet`, aktiviert das automatische Veto-Handling und setzt die Pfade für Critic-Regeln und Output fest. |
-| `01_ПРОЕКТ-ОТДЕЛА/ЗАДАЧА.md` | Die übergeordnete Zielsetzung des gesamten Departments. | Beschreibt die Probleme klassischer Ein-Prompt-KI (Halluzinationen, Floskeln) und erklärt die Lösung durch Rollenisolierung. |
-| `01_ПРОЕКТ-ОТДЕЛА/AGENTS.md` | Kurzübersicht aller Rollen für Entwickler. | Listet die 5 Rollen (Manager, Researcher, Marketer, Copywriter, QA Critic) und ihre grundlegenden Aufgaben auf. |
-| `01_ПРОЕКТ-ОТДЕЛА/employees/copywriter/instructions.md` | Der unzensierte System-Prompt des Copywriters. | Schreibt das Zwei-Fassungen-Prinzip (Kurz & Lang) vor und definiert die goldene Brand Voice (Kurze Sätze, direktes "Du"). |
-| `01_ПРОЕКТ-ОТДЕЛА/employees/critic/instructions.md` | Die strenge System-Instruktion des Qualitätsprüfers. | Verbietet dem Critic das Selberschreiben. Schreibt die 7-Punkte-Checkliste und das Veto-Protokoll (REJECTED) vor. |
-| `01_ПРОЕКТ-ОТДЕЛА/employees/marketer/instructions.md` | Die strategische Arbeitsanweisung des Marketers. | Weist den Marketer an, aus den Fakten 3 Buyer Personas, ein USP und eine Angebots-Treppe zu bauen (ohne Werbetexte zu verfassen). |
-| `01_ПРОЕКТ-ОТДЕЛА/employees/researcher/instructions.md` | Das Regelwerk für neutrale Faktenrecherche. | Verbietet jegliche werbliche Sprache. Schreibt die Pflicht zur URL-Verifizierung und das strikte Verbot von Erfindungen vor. |
-| `01_ПРОЕКТ-ОТДЕЛА/output/copywriter/texts.md` | Protokolliert die Entstehung der Texte. | Enthält ein echtes Beispiel einer gescheiterten Erstfassung (Draft 1 - REJECTED) aufgrund von Blacklist-Floskeln und wie der Critic reagierte. |
-| `01_ПРОЕКТ-ОТДЕЛА/output/marketer/strategy.md` | Speicherort der Marketingstrategie. | Ein strukturiertes Template für die 3 Zielgruppensegmente und das ausgearbeitete Verkaufsversprechen (USP). |
-| `01_ПРОЕКТ-ОТДЕЛА/output/researcher/source-1.md` | Datenquelle 1 (Faktenrecherche). | Beispielhafte, verifizierte Marktfakten (z. B. "35 % aller Kundenanfragen im Autosektor kommen nachts"). |
-| `01_ПРОЕКТ-ОТДЕЛА/output/researcher/source-2.md` | Datenquelle 2 (Faktenrecherche). | Analysen zur Arbeitszeitersparnis und Prozessbeschleunigung durch den Einsatz von KI. |
-| `01_ПРОЕКТ-ОТДЕЛА/output/researcher/source-3.md` | Datenquelle 3 (Faktenrecherche). | Genaue Spezifikationen und Zeitrahmen für CRM-Schnittstellen und Software-Anbindungen. |
-| `01_ПРОЕКТ-ОТДЕЛА/final/test-run.md` | Das erfolgreiche Archiv. | Das finale Freigabeprotokoll mit dem Stempel `✅ APPROVED` durch den QA Critic. |
-| `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/readme.md` | Archiv-Wegweiser. | Erklärt, dass dieser Ordner für unveränderliche, globale Brand-Richtlinien reserviert ist. |
-| `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/knowledge/global/brand_voice_template.md` | Übergreifende Corporate Identity Richtlinie. | Definiert den Tone of Voice für das gesamte Unternehmen: Pragmatismus, Nutzenorientierung, Fokus auf harte Beweise. |
-| `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/knowledge/copywriter/forbidden_phrases_template.md` | Die Zensur- und Verbotsliste. | Liste mit exakten Begriffen, die verboten sind (z. B. "revolutionär", "ultimativ", "Spitzenklasse"). |
-| `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/pipeline/input/briefing_template.md` | Muster-Briefing für neue Kampagnen. | Ein leeres, strukturiertes Formular für Ziele, Budget, Produktmerkmale und Zielvorgaben des Kunden. |
-| `03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТ_РАУНДА/readme.md` | Revisions- und Updateprotokoll. | Übersicht über historisch vorgenommene Prompt-Optimierungen und Department-Anpassungen. |
+Sie besteht aus zwei Kernbereichen:
+
+### A. `/pipeline/input/`
+Hier legst du die Marschroute fest.
+*   **`briefing_template.md`:** Eine Blanko-Vorlage, die du für jedes neue Produkt kopieren und ausfüllen kannst.
+*   **`briefing.md`:** Das aktuell aktive Arbeitsdokument. Im Moment ist dort ein vollständiges, hochkonvertierendes Praxisbriefing für deinen **KI-Telefonassistenten für Kfz-Betriebe** hinterlegt. Es definiert die Zielgruppe (Inhaber freier Werkstätten), den USP (fängt 100% aller Nacht-Anrufe ab) und verweist auf die verifizierten Quellen-IDs in der Hauptdatenbank.
+
+### B. `/pipeline/interim/`
+*   Dieses Verzeichnis dient als temporärer Puffer, in dem Claude Code während des laufenden Prozesses Zwischenstände speichert, analysiert und abgleicht, bevor die Texte endgültig freigegeben werden.
 
 ---
 
-## 🔒 4. Die Sicherheits- und Rechte-Matrix (Wer darf was?)
+## 📦 3. Die anderen wichtigen Komponenten ("and others")
 
-Um Fehler, Überschreiben oder unbefugtes Manipulieren von Systemdateien durch Agenten zu verhindern, gilt in der `subagents_department`-Struktur eine strikte Rechteverteilung:
+### A. Die Wissensdatenbank (`/knowledge/`)
+📍 **Pfad:** `02_ПРОЕКТ-ПАПКИ-НЕ-АГЕНТЫ/knowledge/`
+*   **`global/brand_voice_template.md`:** Schreibt die unumstößlichen Schreibregeln für alle Werbematerialien vor (z. B. absolute Text-Pragmatik, maximal 15 Wörter pro Satz, direkte Ansprache des Kunden mit "Du").
+*   **`copywriter/forbidden_phrases_template.md`:** Der Zensur-Filter. Begriffe wie *"revolutionär"*, *"ultimativ"* oder *"KI-gestützte Magie"* sind hier gelistet. Verwendet der Copywriter eines dieser Wörter, schlägt der Critic sofort Alarm.
 
-| Rolle (Agent) | Leserechte (READ) | Schreibrechte (WRITE) | Berechtigungsgrenzen |
-| :--- | :--- | :--- | :--- |
-| **Manager** | Gesamtes Projekt, `pipeline/input/`, `output/` | `.claude/settings.json`, Aufgabenverteilungen | Darf niemals selbst Entwürfe schreiben oder den Critic-Zensurordner ändern. |
-| **Researcher** | `pipeline/input/`, `knowledge/` | `output/researcher/` | Darf keine Marketingtexte oder Zielgruppensegmente entwerfen. |
-| **Marketer** | `output/researcher/`, `knowledge/` | `output/marketer/` | Darf keine fertigen Werbe-Anzeigen formulieren. |
-| **Copywriter** | `output/marketer/`, `knowledge/` | `output/copywriter/` | Darf keine Fakten erfinden; ist an die Blacklist in `knowledge/` gebunden. |
-| **QA Critic** | `output/copywriter/`, `knowledge/` | `final/`, `output/copywriter/texts.md` (nur Feedback-Log) | **Hat absolutes Schreibverbot für Texte!** Darf nur absegnen (`APPROVED`) oder blockieren (`REJECTED`). |
+### B. Das Revisions-Protokoll (`03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТЬЕГО_РАУНДА/`)
+📍 **Pfad:** `03_ИЗМЕНЕНИЕ_ДЛЯ_ТРЕТЬЕГО_РАУНДА/ИЗМЕНЕНИЕ-01.md`
+*   Hier werden alle Kalibrierungen des Systems festgehalten. Im aktuellen Dokument ist dokumentiert, wie der Critic im dritten Durchlauf noch schärfere Maßstäbe anlegt (z. B. die Einstufung jeglicher emotionaler Superlative wie "am besten" als sofortigen Blocker).
+
+### C. Die 7 Root-Einstiegsdateien (Aus dem Betriebshandbuch)
+📍 **Pfad:** Hauptverzeichnis (Root)
+*   **`00_СТАРТ-В-CLAUDE-DESKTOP.md`:** Dein direkter Einstiegsbefehl, um die gesamte Abteilung im Terminal zum Leben zu erwecken.
+*   **`02_ПРОМПТЫ.md`:** Das übergeordnete Prompts-Manifest des gesamten Departments.
+*   **`03_ЭКСПЕРИМЕНТЫ.md`:** Die Sandbox zur sicheren Erprobung neuer Prompt-Formate.
+*   **`04_ЧЕКЛИСТ-СЪЁМКИ.md`:** Das visuelle Regelwerk, um deine fertigen Werbetexte fehlerfrei in TikTok-, Shorts- oder Video-Werbung zu übersetzen.
+*   **`05_КАРТОЧКА-СРАВНЕНИЯ.md`:** Die standardisierte Vergleichstabelle für systematische Wettbewerbsanalysen.
+*   **`06_ИСТОЧНИКИ.md`:** Das unbestechliche Whitelist-Verzeichnis, auf das sich der Researcher beziehen MUSS.
+*   **`07_ОТЧЁТ-ПРОВЕРКИ.md`:** Das Audit-Log, in dem der Critic jedes Veto und jede Freigabe sekundengenau dokumentiert.
