@@ -7,7 +7,7 @@ Diese Dokumentation bildet die **vollständige, lückenlose Architektur** deines
 
 ## 🌲 Die visuelle Gesamtstruktur (ASCII-Baum)
 
-Wenn du das Skript `recreate_project_v3.py` ausführst, wird genau diese Struktur direkt auf deinem Mac-Schreibtisch angelegt:
+Wenn du das Skript `create_project.py` ausführst, wird genau diese Struktur direkt auf deinem Mac-Schreibtisch angelegt:
 
 ```text
 Building Autonomous AI Department/
