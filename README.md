@@ -1,4 +1,4 @@
-🤖 Autonomes Claude KI-Department (v1.1.0)
+🤖 Autonomes Claude KI-Department 
 Dieses Repository enthält die vollständige, für Claude Code und Claude 3.5 Sonnet optimierte Infrastruktur für ein autonomes Multi-Agenten-KI-Department. Das System löst das Problem linearer, fehleranfälliger Chat-Prompts durch eine strikte, dateibasierte Rollenisolierung und eine unbestechliche, automatisierte Qualitätsschleife.
 
 📈 Projekt-Status
