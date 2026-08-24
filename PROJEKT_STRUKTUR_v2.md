@@ -1,5 +1,4 @@
-# 🗂️ Vollständige Projekt- und Ordnerstruktur (V2)
-
+# 🗂️ Vollständige Projekt- und Ordnerstruktur
 Dieses Dokument bietet eine lückenlose, detaillierte und vollständig ausformulierte Übersicht über die tatsächliche Dateistruktur deines Claude-Agenten-Departments (`subagents_department`). Es bildet exakt ab, welche Ordner und Dateien durch das Skript `recreate_project.py` erstellt werden.
 
 ---
